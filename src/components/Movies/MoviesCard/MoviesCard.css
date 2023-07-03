@@ -1,0 +1,38 @@
+.moviesCard {
+	display: flex;
+	flex-direction: column;
+}
+
+.moviesCard__data {
+	background-color: #222222;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 14px;
+}
+
+.moviesCard__title {
+	font-size: 15px;
+	font-weight: 500;
+	margin: 0 0 9px 0;
+}
+
+.moviesCard__time {
+	font-size: 11px;
+	color: #8B8B8B;
+	margin: 0;
+}
+
+.moviesCard__bookmark {
+	background-image: url(../../../images/bookmark.svg);
+	cursor: pointer;
+	height: 30px;
+	width: 30px;
+	background-color: initial;
+	border: none;
+	transition: opacity 0.3s ease;
+}
+
+.moviesCard__bookmark:hover {
+	opacity: 0.8;
+}
