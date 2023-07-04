@@ -10,10 +10,10 @@ export default function Footer() {
       <div className="footer__wrapper">
         <p className="footer__copyright">&copy; {new Date().getFullYear()}</p>
         <div className="footer__links">
-          <Link to="https://practicum.yandex.ru/" className="footer__link">
+          <Link to="https://practicum.yandex.ru/" className="footer__link" target="_blank">
             Яндекс.Практикум
           </Link>
-          <Link to="https://github.com/IgorSuhachov/movies-explorer-frontend" className="footer__link">
+          <Link to="https://github.com/IgorSuhachov/movies-explorer-frontend" className="footer__link" target="_blank">
             GitHub
           </Link>
         </div>

@@ -18,7 +18,7 @@ export default function App() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/signup" element={<Register />} />
         <Route path="/signin" element={<Login />} />
-        {/*<Route path="/404" element={<Error404 />} />*/}
+        <Route path="/404" element={<Error404 />} />
       </Routes>
     </div>
   );

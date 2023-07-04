@@ -13,7 +13,7 @@
 .register__form {
 	display: flex;
 	flex-direction: column;
-	padding-top: 70px;
+	padding: 70px 0;
 }
 
 .register__label {
@@ -95,7 +95,7 @@
 
 @media screen and (max-width: 910px) {
 	.register__form {
-		padding-top: 232px;
+		padding: 232px 0;
 	}
 }
 

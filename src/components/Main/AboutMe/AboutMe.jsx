@@ -19,7 +19,7 @@ export default function AboutMe() {
             музыку, а ещё увлекаюсь бегом. Недавно начал кодить. С 2015 года работал в компании «СКБ Контур». После
             того, как прошёл курс по веб-разработке, начал заниматься фриланс-заказами и ушёл с постоянной работы.
           </p>
-          <Link to="https://github.com/IgorSuhachov" className="aboutMe__link">
+          <Link to="https://github.com/IgorSuhachov" className="aboutMe__link" target="_blank">
             GitHub
           </Link>
         </div>
