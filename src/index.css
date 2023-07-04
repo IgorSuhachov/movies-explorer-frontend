@@ -54,3 +54,6 @@
 
 /*PRELOADER*/
 @import url(./components/Preloader/Preloader.css);
+
+/*BURGER*/
+@import url(./components/Header/Burger/Burger.css);
