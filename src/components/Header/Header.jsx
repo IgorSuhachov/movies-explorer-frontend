@@ -34,10 +34,10 @@ export default function Header() {
         <img src={logo} alt="логотип" className="header__logo" />
       </Link>
       <div className="header__authorization">
-        <Link to="/signin" className="header__registration">
+        <Link to="/signup" className="header__registration">
           Регистрация
         </Link>
-        <Link to="/signup" className="header__login">
+        <Link to="/signin" className="header__login">
           Войти
         </Link>
       </div>

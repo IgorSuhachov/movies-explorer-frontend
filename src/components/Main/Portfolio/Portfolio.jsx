@@ -13,7 +13,7 @@ export default function Portfolio() {
               <p className="portfolio__title">Статичный сайт</p>
             </Link>
             <Link to="https://github.com/IgorSuhachov/how-to-learn" target="_blank">
-              <img src={linkIco} alt="ссылка" />
+              <img src={linkIco} alt="ссылка" className="portfolio__arrow" />
             </Link>
           </div>
         </li>
@@ -23,7 +23,7 @@ export default function Portfolio() {
               <p className="portfolio__title">Адаптивный сайт</p>
             </Link>
             <Link to="https://github.com/IgorSuhachov/russian-travel" target="_blank">
-              <img src={linkIco} alt="ссылка" />
+              <img src={linkIco} alt="ссылка" className="portfolio__arrow" />
             </Link>
           </div>
         </li>
@@ -33,7 +33,7 @@ export default function Portfolio() {
               <p className="portfolio__title">Одностраничное приложение</p>
             </Link>
             <Link to="https://github.com/IgorSuhachov/react-mesto-auth" target="_blank">
-              <img src={linkIco} alt="ссылка" />
+              <img src={linkIco} alt="ссылка" className="portfolio__arrow" />
             </Link>
           </div>
         </li>

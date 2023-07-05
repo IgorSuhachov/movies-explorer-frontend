@@ -47,6 +47,11 @@
 	right: 22px;
 	cursor: pointer;
 	z-index: 1;
+	transition: opacity 0.3s ease;
+}
+
+.burger__close:hover {
+	opacity: 0.7;
 }
 
 .burger__link {
@@ -54,6 +59,11 @@
 	font-weight: 500;
 	text-decoration: none;
 	color: #fff;
+	transition: opacity 0.3s ease;
+}
+
+.burger__link:hover {
+	opacity: 0.7;
 }
 
 .burger__link_active {
@@ -72,6 +82,11 @@
 	background-color: #313131;
 	border-radius: 20px;
 	z-index: 1;
+	transition: opacity 0.3s ease;
+}
+
+.burger__account:hover {
+	opacity: 0.7;
 }
 
 .burger__menu {
@@ -80,6 +95,12 @@
 	height: 44px;
 	border: none;
 	background-color: transparent;
+	cursor: pointer;
+	transition: opacity 0.3s ease;
+}
+
+.burger__menu:hover {
+	opacity: 0.7;
 }
 
 @media screen and (max-width: 620px) {

@@ -28,6 +28,12 @@
 	font-size: 14px;
 }
 
+@media screen and (max-width: 910px) {
+	.error {
+		padding-bottom: 222px;
+	}
+}
+
 @media screen and (max-width: 620px) {
 	.error__heading {
 		font-size: 80px;

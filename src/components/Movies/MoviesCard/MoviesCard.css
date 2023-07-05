@@ -33,6 +33,10 @@
 	transition: opacity 0.3s ease;
 }
 
+.moviesCard__bookmark_remove {
+	background-image: url(../../../images/bookmark_remove.svg);
+}
+
 .moviesCard__bookmark:hover {
 	opacity: 0.8;
 }

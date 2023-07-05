@@ -1,5 +1,7 @@
 .portfolio {
 	padding: 0 70px 125px;
+	max-width: 1140px;
+	margin: 0 auto;
 }
 
 .portfolio__heading {
@@ -76,5 +78,10 @@
 		font-size: 18px;
 		line-height: 28px;
 		letter-spacing: -0.72px;
+	}
+
+	.portfolio__arrow {
+		width: 18px;
+		height: 28px;
 	}
 }
