@@ -1,7 +1,9 @@
 .header {
-	padding: 21px 70px;
 	display: flex;
 	justify-content: space-between;
+	padding: 21px 0;
+	max-width: 1140px;
+	margin: 0 auto;
 }
 
 .header__authorization {
@@ -39,15 +41,23 @@
 	opacity: 0.8;
 }
 
+@media screen and (max-width: 1280px) {
+	.header {
+		margin: 0 70px;
+	}
+}
+
 @media screen and (max-width: 910px) {
 	.header {
-		padding: 18px 30px 38px;
+		padding: 18px 0 38px;
+		margin: 0 30px;
 	}
 }
 
 @media screen and (max-width: 620px) {
 	.header {
-		padding: 18px 14px 32px;
+		padding: 18px 0 32px;
+		margin: 0 14px;
 	}
 
 	.header__registration {

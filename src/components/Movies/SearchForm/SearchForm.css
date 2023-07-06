@@ -7,6 +7,8 @@
 	justify-content: space-between;
 	align-items: center;
 	gap: 10px;
+	max-width: 1140px;
+	margin: 0 auto;
 }
 
 .searchForm__input {

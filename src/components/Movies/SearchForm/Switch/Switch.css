@@ -5,6 +5,8 @@
 	padding-bottom: 40px;
 	border-bottom: 1px solid #424242;
 	gap: 12px;
+	max-width: 1140px;
+	margin: 0 auto;
 }
 
 .switch-text {
