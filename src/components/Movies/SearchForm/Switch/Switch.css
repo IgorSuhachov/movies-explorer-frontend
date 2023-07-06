@@ -1,8 +1,7 @@
 .switch {
 	display: flex;
 	justify-content: center;
-	padding-top: 24px;
-	padding-bottom: 40px;
+	padding: 24px 15px 40px 0;
 	border-bottom: 1px solid #424242;
 	gap: 12px;
 	max-width: 1140px;
