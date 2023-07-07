@@ -101,9 +101,16 @@
 	}
 }
 
+@media screen and (max-width: 910px) {
+	.about {
+		margin: 0;
+	}
+}
+
 @media screen and (max-width: 620px) {
 	.about {
 		padding: 70px 18px;
+		margin: 0;
 	}
 
 	.about__heading {
