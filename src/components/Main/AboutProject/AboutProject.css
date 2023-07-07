@@ -1,0 +1,147 @@
+.about {
+	display: flex;
+	flex-direction: column;
+	padding: 110px 0;
+	margin: 0 auto;
+	max-width: 1140px;
+}
+
+.about__header {
+	padding-bottom: 23px;
+	width: 100%;
+	border-bottom: 1px solid #DADADA;
+}
+
+.about__heading {
+	font-weight: 400;
+	font-size: 22px;
+	letter-spacing: -0.88px;
+	margin: 0;
+}
+
+.about__subheading {
+	margin: 0;
+	font-weight: 400;
+	letter-spacing: -0.8px;
+	font-size: 20px;
+}
+
+.about__information {
+	display: flex;
+	margin-top: 70px;
+}
+
+.about__text {
+	font-size: 14px;
+	line-height: 20px;
+	max-width: 550px;
+	margin: 26px 0 0 0;
+}
+
+.about__progress-wrapper {
+	display: flex;
+	width: 100%;
+	margin-top: 110px;
+	align-items: center;
+}
+
+.about__progress-item {
+	background-color: #3DDC84;
+	width: 20%;
+	color: #000;
+	text-align: center;
+	font-size: 14px;
+	font-weight: 400;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.about__progress-item:last-child {
+	background-color: #303030;
+	width: 80%;
+	color: #fff;
+}
+
+.about__progress-week {
+	margin: 0;
+	position: relative;
+	top: 7px;
+}
+
+.about__label {
+	font-size: 14px;
+	color: #8B8B8B;
+	line-height: 17px;
+	font-weight: 500;
+	text-align: center;
+	margin: 0;
+	position: relative;
+	top: 28px;
+}
+
+@media screen and (max-width: 910px) {
+	.about {
+		padding: 90px 50px;
+	}
+
+	.about__information {
+		gap: 30px;
+	}
+
+	.about__text {
+		font-size: 12px;
+		line-height: 18px;
+	}
+}
+
+@media screen and (max-width: 1280px) {
+	.about {
+		margin: 0 70px;
+	}
+}
+
+@media screen and (max-width: 910px) {
+	.about {
+		margin: 0;
+	}
+}
+
+@media screen and (max-width: 620px) {
+	.about {
+		padding: 70px 18px;
+		margin: 0;
+	}
+
+	.about__heading {
+		font-size: 18px;
+		letter-spacing: -0.72px;
+	}
+
+	.about__information {
+		flex-direction: column;
+		gap: 56px;
+	}
+
+	.about__subheading {
+		font-size: 18px;
+		letter-spacing: -0.72px;
+	}
+
+	.about__text {
+		font-size: 11px;
+		line-height: 16px;
+	}
+
+	.about__progress-wrapper {
+		margin-top: 60px;
+	}
+
+	.about__progress-item {
+		font-size: 11px;
+	}
+
+	.about__label {
+		font-size: 11px;
+	}
+}

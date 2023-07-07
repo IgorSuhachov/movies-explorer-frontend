@@ -1,0 +1,59 @@
+/*NORMALIZE*/
+@import url(./vendor/normalize.css);
+
+/*FONTS*/
+@import url(./vendor/fonts/fonts.css);
+
+/*APP*/
+@import url(./components/App/App.css);
+
+/*HEADER*/
+@import url(./components/Header/Header.css);
+
+/*PROMO*/
+@import url(./components/Main/Promo/Promo.css);
+
+/*NAVTAB*/
+@import url(./components/Main/Promo/NavTab/NavTab.css);
+
+/*ABOUT*/
+@import url(./components/Main/AboutProject/AboutProject.css);
+
+/*TECHS*/
+@import url(./components/Main/Techs/Techs.css);
+
+/*ABOUTME*/
+@import url(./components/Main/AboutMe/AboutMe.css);
+
+/*PORTFOLIO*/
+@import url(./components/Main/Portfolio/Portfolio.css);
+
+/*MOVIES*/
+@import url(./components/Movies/Movies.css);
+@import url(./components/Movies/MoviesCardList/MoviesCardList.css);
+@import url(./components//Movies/MoviesCard/MoviesCard.css);
+
+
+/*SEARCH-FORM*/
+@import url(./components/Movies/SearchForm/SearchForm.css);
+
+/*SWITCH*/
+@import url(./components/Movies/SearchForm/Switch/Switch.css);
+
+/*FOOTER*/
+@import url(./components/Footer/Footer.css);
+
+/*PROFILE*/
+@import url(./components/Profile/Profile.css);
+
+/*REGISTER*/
+@import url(./components/Register/Register.css);
+
+/*Error404*/
+@import url(./components/Error404/Error404.css);
+
+/*PRELOADER*/
+@import url(./components/Preloader/Preloader.css);
+
+/*BURGER*/
+@import url(./components/Header/Burger/Burger.css);

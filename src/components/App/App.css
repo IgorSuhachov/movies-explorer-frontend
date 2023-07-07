@@ -1,0 +1,10 @@
+html {
+	scroll-behavior: smooth;
+}
+
+.app {
+	min-height: 100vh;
+	background-color: #202020;
+	font-family: 'Inter', Arial, Helvetica, sans-serif;
+	color: #fff;
+}
