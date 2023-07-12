@@ -7,10 +7,10 @@ import Portfolio from './Portfolio/Portfolio';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 
-export default function Main() {
+export default function Main({ loggedIn }) {
   return (
     <>
-      <Header />
+      <Header loggedIn={loggedIn} />
       <main className="main">
         <Promo />
         <AboutProject />
