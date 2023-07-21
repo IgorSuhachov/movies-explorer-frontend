@@ -1,12 +1,13 @@
 import React, { useContext, useEffect } from 'react';
 import Header from '../Header/Header';
 import CurrentUserContext from '../../contexts/CurrentUserContext';
-import { useForm } from '../../hooks/useForm';
+import { useFormWithValidation } from '../../hooks/useForm';
+import { emailPattern } from '../../utils/pattern';
 
 export default function Profile({ loggedIn, handleSignout, handleUpdateUser }) {
   const currentUser = useContext(CurrentUserContext);
 
-  const { values, handleChange, setValues } = useForm({
+  const { values, handleChange, setValues, errors, isValid } = useFormWithValidation({
     email: '',
     name: '',
   });
@@ -17,7 +18,7 @@ export default function Profile({ loggedIn, handleSignout, handleUpdateUser }) {
       email: currentUser.email || '',
     });
   }, [currentUser]);
-  
+
   function handleSubmit(e) {
     e.preventDefault();
     handleUpdateUser({
@@ -38,25 +39,33 @@ export default function Profile({ loggedIn, handleSignout, handleUpdateUser }) {
               <input
                 type="text"
                 className="profile__initials"
-                value={values.name}
+                value={values.name || ''}
                 onChange={handleChange}
                 name="name"
                 required
               />
             </div>
+            <span className="profile__input-error">{errors.name}</span>
             <div className="profile__info">
               <span className="profile__initials">E-mail</span>
               <input
                 type="email"
                 className="profile__initials"
-                value={values.email}
+                value={values.email || ''}
                 onChange={handleChange}
                 name="email"
                 required
+                pattern={emailPattern}
               />
             </div>
+            <span className="profile__input-error">{errors.email}</span>
           </div>
-          <button className="profile__button">Редактировать</button>
+          <button
+            className={isValid ? 'profile__button' : 'profile__button profile__button_disabled'}
+            disabled={isValid ? false : true}
+          >
+            Редактировать
+          </button>
           <button className="profile__button profile__button_red" onClick={handleSignout}>
             Выйти из аккаунта
           </button>

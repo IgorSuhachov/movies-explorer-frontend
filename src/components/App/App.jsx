@@ -15,54 +15,58 @@ import AuthContext from '../ProtectedRoute/AuthContext';
 export default function App() {
   const [loggedIn, setLoggedIn] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
+  const [savedMovies, setSavedMovies] = useState([]);
 
   const navigate = useNavigate();
   const location = useLocation();
 
-  //Проверка токена
+  // Проверка токена
   useEffect(() => {
     const token = localStorage.getItem('token');
-    if (!token) {
-      return;
+    if (token) {
+      api
+        .getContent(token)
+        .then(() => {
+          setLoggedIn(true);
+          navigate(location.pathname);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     }
-    api
-      .getContent(token)
-      .then(() => {
-        setLoggedIn(true);
-        navigate(location.pathname);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
   }, []);
 
-  //Получаем информацию о пользователе
+  // Получаем информацию о пользователе
   useEffect(() => {
     if (loggedIn) {
       api
         .getUserInfo()
-        .then((res) => {
-          setCurrentUser(res);
-        })
+        .then(setCurrentUser)
+        .catch((err) => {
+          console.log(err);
+        });
+      api
+        .getInitialsMovies()
+        .then(setSavedMovies)
         .catch((err) => {
           console.log(err);
         });
     }
   }, [loggedIn]);
 
-  //Регистрация
+  // Регистрация
   function handleRegister(email, password, name) {
     api
       .register({ email, password, name })
       .then(() => {
-        navigate('/signin');
+        handleLogin(email, password);
       })
       .catch((err) => {
         console.log(err);
       });
   }
 
-  //Авторизация
+  // Авторизация
   function handleLogin(email, password) {
     api
       .authorize({ email, password })
@@ -78,19 +82,46 @@ export default function App() {
       });
   }
 
-  //Выход из аккаунта
+  // Выход из аккаунта
   function handleSignout() {
     localStorage.removeItem('token');
+    localStorage.removeItem('allMovies');
+    localStorage.removeItem('movies');
+    localStorage.removeItem('moviesSearch');
+    localStorage.removeItem('short');
     setLoggedIn(false);
     navigate('/');
   }
 
-  //Обновление профиля
+  // Обновление профиля
   function handleUpdateUser(data) {
     api
       .setUserInfo(data)
-      .then((data) => {
-        setCurrentUser(data);
+      .then(setCurrentUser)
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+
+  // Сохранить карточку
+  function handleSaveCard(card) {
+    api
+      .addCard(card)
+      .then((newCard) => {
+        setSavedMovies([newCard, ...savedMovies]);
+        console.log(`${newCard.nameRU} лайкнута`);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+
+  // Удалить карточку
+  function handleDeleteCard(card) {
+    api
+      .deleteCard(card._id)
+      .then(() => {
+        setSavedMovies((prevMovies) => prevMovies.filter((item) => item._id !== card._id));
       })
       .catch((err) => {
         console.log(err);
@@ -103,8 +134,29 @@ export default function App() {
         <div className="app">
           <Routes>
             <Route path="/" element={<Main />} />
-            <Route path="/movies" element={<ProtectedRoute component={Movies} loggedIn={loggedIn} />} />
-            <Route path="/saved-movies" element={<ProtectedRoute component={SavedMovies} loggedIn={loggedIn} />} />
+            <Route
+              path="/movies"
+              element={
+                <ProtectedRoute
+                  component={Movies}
+                  loggedIn={loggedIn}
+                  savedMovies={savedMovies}
+                  handleSaveCard={handleSaveCard}
+                  handleDeleteCard={handleDeleteCard}
+                />
+              }
+            />
+            <Route
+              path="/saved-movies"
+              element={
+                <ProtectedRoute
+                  component={SavedMovies}
+                  loggedIn={loggedIn}
+                  savedMovies={savedMovies}
+                  handleDeleteCard={handleDeleteCard}
+                />
+              }
+            />
             <Route
               path="/profile"
               element={

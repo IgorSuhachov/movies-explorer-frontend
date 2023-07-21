@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../images/logo.svg';
-import { useForm } from '../../hooks/useForm';
+import { useFormWithValidation } from '../../hooks/useForm';
+import { emailPattern } from '../../utils/pattern';
 
 export default function Login({ handleLogin }) {
-  const { values, handleChange } = useForm({
+  const { values, errors, handleChange, isValid } = useFormWithValidation({
     email: '',
     password: '',
   });
@@ -23,9 +24,20 @@ export default function Login({ handleLogin }) {
           </Link>
           <h1 className="register__heading">Рады видеть!</h1>
         </div>
-        {renderInput('E-mail', 'email', 'email', 'email', values.email, handleChange)}
-        {renderInput('Пароль', 'password', 'password', 'password', values.password, handleChange)}
-        <button className="register__submit register__submit_mod">Войти</button>
+        {renderInput('E-mail', 'email', 'email', 'email', values.email || '', handleChange, emailPattern)}
+        <span className="register__input-error">{errors.email}</span>
+        {renderInput('Пароль', 'password', 'password', 'password', values.password || '', handleChange)}
+        <span className="register__input-error">{errors.password}</span>
+        <button
+          className={
+            isValid
+              ? 'register__submit register__submit_mod'
+              : 'register__submit register__submit_mod register__submit_disabled'
+          }
+          disabled={isValid ? false : true}
+        >
+          Войти
+        </button>
         <div className="register__outro">
           <span className="register__text">Еще не зарегистрированы?</span>
           <Link to="/signup" className="register__link">
@@ -37,11 +49,20 @@ export default function Login({ handleLogin }) {
   );
 }
 
-function renderInput(label, type, name, id, value, onChange) {
+function renderInput(label, type, name, id, value, onChange, pattern) {
   return (
     <>
       <label className="register__label">{label}</label>
-      <input type={type} className="register__input" name={name} id={id} value={value} onChange={onChange} required />
+      <input
+        type={type}
+        className="register__input"
+        name={name}
+        id={id}
+        value={value}
+        onChange={onChange}
+        pattern={pattern}
+        required
+      />
     </>
   );
 }
