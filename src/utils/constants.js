@@ -1,10 +1,12 @@
-export const desktopWidth = 1280;
-export const desktopCount = 12;
-export const desktopMoreCount = 3;
+export const DESKTOP_WIDTH = 1280;
+export const DESKTOP_COUNT = 12;
+export const DESKTOP_MORE_COUNT = 3;
 
-export const tabletWidth = 726;
-export const tabletCount = 8;
+export const TABLET_WIDTH = 726;
+export const TABLET_COUNT = 8;
 
-export const mobileCount = 5;
+export const MOBILE_COUNT = 5;
 
-export const moreCount = 2;
+export const MORE_COUNT = 2;
+
+export const SHORT_MOVIE_DURATION = 40;

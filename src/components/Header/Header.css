@@ -73,9 +73,13 @@
 	text-decoration: none;
 	color: #fff;
 	font-size: 13px;
-	font-weight: 500;
+	font-weight: 400;
 	line-height: 18px;
 	transition: opacity 0.3s ease;
+}
+
+.header__link_active {
+	font-weight: 500;
 }
 
 .header__link:hover {

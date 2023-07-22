@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import logo from '../../images/logo.svg';
 import Burger from './Burger/Burger';
 import AuthContext from '../ProtectedRoute/AuthContext';
@@ -39,12 +39,18 @@ export default function Header() {
               <img src={logo} alt="логотип" className="header__logo" />
             </Link>
             <div className="header__links">
-              <Link to="/movies" className="header__link">
+              <NavLink
+                to="/movies"
+                className={({ isActive }) => (isActive ? 'header__link header__link_active' : 'header__link')}
+              >
                 Фильмы
-              </Link>
-              <Link to="/saved-movies" className="header__link">
+              </NavLink>
+              <NavLink
+                to="/saved-movies"
+                className={({ isActive }) => (isActive ? 'header__link header__link_active' : 'header__link')}
+              >
                 Сохраненные фильмы
-              </Link>
+              </NavLink>
             </div>
           </div>
           <div className="header__authorization">

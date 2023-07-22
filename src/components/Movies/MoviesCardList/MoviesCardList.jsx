@@ -4,13 +4,13 @@ import MoviesCard from '../MoviesCard/MoviesCard';
 import Preloader from '../../Preloader/Preloader';
 import NotFound from '../NotFound/NotFound';
 import {
-  desktopCount,
-  desktopWidth,
-  tabletCount,
-  tabletWidth,
-  mobileCount,
-  desktopMoreCount,
-  moreCount,
+  DESKTOP_WIDTH,
+  DESKTOP_COUNT,
+  DESKTOP_MORE_COUNT,
+  TABLET_WIDTH,
+  TABLET_COUNT,
+  MOBILE_COUNT,
+  MORE_COUNT,
 } from '../../../utils/constants';
 
 export default function MoviesCardList({ cards, savedMovies, handleSaveCard, handleDeleteCard, preloader, notFound }) {
@@ -23,12 +23,12 @@ export default function MoviesCardList({ cards, savedMovies, handleSaveCard, han
   useEffect(() => {
     const shownCount = () => {
       const display = window.innerWidth;
-      if (display > desktopWidth) {
-        setShownMovies(desktopCount);
-      } else if (display > tabletWidth) {
-        setShownMovies(tabletCount);
+      if (display > DESKTOP_WIDTH) {
+        setShownMovies(DESKTOP_COUNT);
+      } else if (display > TABLET_WIDTH) {
+        setShownMovies(TABLET_COUNT);
       } else {
-        setShownMovies(mobileCount);
+        setShownMovies(MOBILE_COUNT);
       }
     };
 
@@ -43,10 +43,10 @@ export default function MoviesCardList({ cards, savedMovies, handleSaveCard, han
   // Функция для добавления карточек при нажатии кнопки "еще"
   function showMore() {
     const display = window.innerWidth;
-    if (display > desktopWidth) {
-      setShownMovies(shownMovies + desktopMoreCount);
+    if (display > DESKTOP_WIDTH) {
+      setShownMovies(shownMovies + DESKTOP_MORE_COUNT);
     } else {
-      setShownMovies(shownMovies + moreCount);
+      setShownMovies(shownMovies + MORE_COUNT);
     }
   }
 

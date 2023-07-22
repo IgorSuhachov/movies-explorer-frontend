@@ -41,7 +41,7 @@ export default function SearchForm({ onSearchMovies, onFilteredMovies, shortCard
         />
         <button className="searchForm__find" />
       </form>
-      {emptyQuery && <span className="searchForm__tip">Пустой запрос</span>}
+      {emptyQuery && <span className="searchForm__tip">Нужно ввести ключевое слово</span>}
       <Switch onFilteredMovies={onFilteredMovies} shortCard={shortCard} />
     </section>
   );
