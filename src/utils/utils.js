@@ -16,5 +16,8 @@ export function converter(duration) {
 }
 
 export function filterShort(movies) {
+  if (!movies) {
+    return [];
+  }
   return movies.filter((movie) => movie.duration < SHORT_MOVIE_DURATION);
 }

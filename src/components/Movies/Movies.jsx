@@ -26,7 +26,6 @@ export default function Movies({ loggedIn, handleSaveCard, handleDeleteCard, sav
   function handleShortToggle() {
     const newShortCardValue = !shortCard;
     setShortCard(newShortCardValue);
-    setShortCard(!shortCard);
     setFilteredCards(newShortCardValue ? filterShort(initialCards) : initialCards);
     localStorage.setItem('short', newShortCardValue);
   }
