@@ -16,8 +16,8 @@ export default function Profile({ loggedIn, handleSignout, handleUpdateUser }) {
   useEffect(() => {
     if (!dataChanged) {
       setValues({
-        name: currentUser.name || '',
-        email: currentUser.email || '',
+        name: currentUser.name,
+        email: currentUser.email,
       });
     }
   }, [currentUser, dataChanged]);
