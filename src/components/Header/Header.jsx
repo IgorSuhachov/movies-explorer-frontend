@@ -18,7 +18,7 @@ export default function Header() {
     setIsOpen(false);
   }
 
-  if (screenWidth <= 920) {
+  if (screenWidth <= 920 && loggedIn) {
     return (
       <header className="header">
         <Link to="/">
