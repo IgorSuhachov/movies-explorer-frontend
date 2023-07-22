@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Header from '../Header/Header';
 import CurrentUserContext from '../../contexts/CurrentUserContext';
 import { useFormWithValidation } from '../../hooks/useForm';
@@ -6,6 +6,7 @@ import { emailPattern } from '../../utils/pattern';
 
 export default function Profile({ loggedIn, handleSignout, handleUpdateUser }) {
   const currentUser = useContext(CurrentUserContext);
+  const [dataChanged, setDataChanged] = useState(false);
 
   const { values, handleChange, setValues, errors, isValid } = useFormWithValidation({
     email: '',
@@ -13,11 +14,26 @@ export default function Profile({ loggedIn, handleSignout, handleUpdateUser }) {
   });
 
   useEffect(() => {
-    setValues({
-      name: currentUser.name || '',
-      email: currentUser.email || '',
-    });
-  }, [currentUser]);
+    if (!dataChanged) {
+      setValues({
+        name: currentUser.name || '',
+        email: currentUser.email || '',
+      });
+    }
+  }, [currentUser, dataChanged]);
+
+  // Функция для проверки изменений данных формы
+  function checkDataChanged() {
+    if (values.name !== currentUser.name || values.email !== currentUser.email) {
+      setDataChanged(true);
+    } else {
+      setDataChanged(false);
+    }
+  }
+
+  useEffect(() => {
+    checkDataChanged();
+  }, [values]);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -25,6 +41,7 @@ export default function Profile({ loggedIn, handleSignout, handleUpdateUser }) {
       name: values.name,
       email: values.email,
     });
+    setDataChanged(false);
   }
 
   return (
@@ -61,8 +78,8 @@ export default function Profile({ loggedIn, handleSignout, handleUpdateUser }) {
             <span className="profile__input-error">{errors.email}</span>
           </div>
           <button
-            className={isValid ? 'profile__button' : 'profile__button profile__button_disabled'}
-            disabled={isValid ? false : true}
+            className={dataChanged && isValid ? 'profile__button' : 'profile__button profile__button_disabled'}
+            disabled={!dataChanged || !isValid}
           >
             Редактировать
           </button>

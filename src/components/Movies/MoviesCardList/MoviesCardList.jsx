@@ -3,6 +3,15 @@ import { useLocation } from 'react-router-dom';
 import MoviesCard from '../MoviesCard/MoviesCard';
 import Preloader from '../../Preloader/Preloader';
 import NotFound from '../NotFound/NotFound';
+import {
+  desktopCount,
+  desktopWidth,
+  tabletCount,
+  tabletWidth,
+  mobileCount,
+  desktopMoreCount,
+  moreCount,
+} from '../../../utils/constants';
 
 export default function MoviesCardList({ cards, savedMovies, handleSaveCard, handleDeleteCard, preloader, notFound }) {
   const [shownMovies, setShownMovies] = useState(0);
@@ -14,26 +23,30 @@ export default function MoviesCardList({ cards, savedMovies, handleSaveCard, han
   useEffect(() => {
     const shownCount = () => {
       const display = window.innerWidth;
-      if (display > 1024) {
-        setShownMovies(12);
-      } else if (display > 750) {
-        setShownMovies(8);
+      if (display > desktopWidth) {
+        setShownMovies(desktopCount);
+      } else if (display > tabletWidth) {
+        setShownMovies(tabletCount);
       } else {
-        setShownMovies(5);
+        setShownMovies(mobileCount);
       }
     };
 
     shownCount();
     window.addEventListener('resize', shownCount);
+
+    return () => {
+      window.removeEventListener('resize', shownCount);
+    };
   }, []);
 
   // Функция для добавления карточек при нажатии кнопки "еще"
   function showMore() {
     const display = window.innerWidth;
-    if (display > 1024) {
-      setShownMovies(shownMovies + 3);
+    if (display > desktopWidth) {
+      setShownMovies(shownMovies + desktopMoreCount);
     } else {
-      setShownMovies(shownMovies + 2);
+      setShownMovies(shownMovies + moreCount);
     }
   }
 

@@ -63,6 +63,7 @@ export default function App() {
       })
       .catch((err) => {
         console.log(err);
+        alert(err);
       });
   }
 
@@ -79,6 +80,7 @@ export default function App() {
       })
       .catch((err) => {
         console.log(err);
+        alert(err);
       });
   }
 
@@ -97,9 +99,13 @@ export default function App() {
   function handleUpdateUser(data) {
     api
       .setUserInfo(data)
-      .then(setCurrentUser)
+      .then((data) => {
+        setCurrentUser(data);
+        alert('Данные сохранены');
+      })
       .catch((err) => {
         console.log(err);
+        alert(err);
       });
   }
 
@@ -168,8 +174,8 @@ export default function App() {
                 />
               }
             />
-            <Route path="/signup" element={<Register handleRegister={handleRegister} />} />
-            <Route path="/signin" element={<Login handleLogin={handleLogin} />} />
+            <Route path="/signup" element={<Register handleRegister={handleRegister} loggedIn={loggedIn} />} />
+            <Route path="/signin" element={<Login handleLogin={handleLogin} loggedIn={loggedIn} />} />
             <Route path="*" element={<Error404 />} />
           </Routes>
         </div>

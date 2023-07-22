@@ -1,15 +1,24 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import logo from '../../images/logo.svg';
 import { useFormWithValidation } from '../../hooks/useForm';
 import { emailPattern } from '../../utils/pattern';
 
-export default function Register({ handleRegister }) {
+export default function Register({ handleRegister, loggedIn }) {
   const { values, errors, handleChange, isValid } = useFormWithValidation({
     email: '',
     password: '',
     name: '',
   });
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (loggedIn) {
+      navigate('/movies');
+    }
+  }, [loggedIn]);
 
   function handleSubmit(e) {
     e.preventDefault();

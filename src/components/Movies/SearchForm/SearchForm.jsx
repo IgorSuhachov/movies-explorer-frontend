@@ -4,6 +4,7 @@ import { useLocation } from 'react-router-dom';
 
 export default function SearchForm({ onSearchMovies, onFilteredMovies, shortCard }) {
   const [query, setQuery] = useState('');
+  const [emptyQuery, setEmptyQuery] = useState(false);
   const location = useLocation();
 
   function handleChange(e) {
@@ -12,7 +13,12 @@ export default function SearchForm({ onSearchMovies, onFilteredMovies, shortCard
 
   function handleSubmit(e) {
     e.preventDefault();
-    onSearchMovies(query);
+    if (query.trim().length === 0) {
+      setEmptyQuery(true);
+    } else {
+      setEmptyQuery(false);
+      onSearchMovies(query);
+    }
   }
 
   useEffect(() => {
@@ -30,12 +36,12 @@ export default function SearchForm({ onSearchMovies, onFilteredMovies, shortCard
           type="search"
           className="searchForm__input"
           placeholder="Фильм"
-          required
           onChange={handleChange}
           value={query || ''}
         />
         <button className="searchForm__find" />
       </form>
+      {emptyQuery && <span className="searchForm__tip">Пустой запрос</span>}
       <Switch onFilteredMovies={onFilteredMovies} shortCard={shortCard} />
     </section>
   );

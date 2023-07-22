@@ -27,7 +27,7 @@
 	background-image: url(../../../images/bookmark.svg);
 	cursor: pointer;
 	height: 30px;
-	width: 30px;
+	min-width: 30px;
 	background-color: initial;
 	border: none;
 	transition: opacity 0.3s ease;

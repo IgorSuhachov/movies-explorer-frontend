@@ -33,6 +33,7 @@ export default function Movies({ loggedIn, handleSaveCard, handleDeleteCard, sav
 
   // Функция поиска фильмов по запросу
   function onSearchMovies(query) {
+    localStorage.setItem('moviesSearch', query);
     const allMovies = JSON.parse(localStorage.getItem('allMovies'));
 
     if (allMovies) {
