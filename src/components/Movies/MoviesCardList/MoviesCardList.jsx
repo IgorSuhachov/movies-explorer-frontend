@@ -57,8 +57,9 @@ export default function MoviesCardList({ cards, savedMovies, handleSaveCard, han
 
   return (
     <>
-      {isSavedMoviesRoute ? ( // Если находимся на /savved-movies
+      {isSavedMoviesRoute ? ( // Если находимся на /saved-movies
         <>
+          {notFound && <NotFound />}
           <section className="moviesCardList">
             {cards.map((card) => (
               <MoviesCard
