@@ -46,6 +46,16 @@
 	border-bottom: 1px solid #4285F4;
 }
 
+.register__input-error {
+	color: #EE3465;
+	font-size: 10px;
+	margin-bottom: 24px;
+}
+
+.register__input-error:last-of-type {
+	margin-bottom: 0;
+}
+
 .register__submit {
 	margin-top: 135px;
 	background: #4285f4;
@@ -58,6 +68,11 @@
 	padding: 15px;
 	cursor: pointer;
 	transition: opacity 0.3s ease;
+}
+
+.register__submit_disabled {
+	background: gray;
+	cursor: default;
 }
 
 .register__submit_mod {

@@ -33,7 +33,6 @@
 @import url(./components/Movies/MoviesCardList/MoviesCardList.css);
 @import url(./components//Movies/MoviesCard/MoviesCard.css);
 
-
 /*SEARCH-FORM*/
 @import url(./components/Movies/SearchForm/SearchForm.css);
 
@@ -54,6 +53,9 @@
 
 /*PRELOADER*/
 @import url(./components/Preloader/Preloader.css);
+
+/*NOTFOUND*/
+@import url(./components/Movies/NotFound/NotFound.css);
 
 /*BURGER*/
 @import url(./components/Header/Burger/Burger.css);
