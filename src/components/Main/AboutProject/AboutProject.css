@@ -9,7 +9,7 @@
 .about__header {
 	padding-bottom: 23px;
 	width: 100%;
-	border-bottom: 1px solid #DADADA;
+	border-bottom: 1px solid #dadada;
 }
 
 .about__heading {
@@ -46,7 +46,7 @@
 }
 
 .about__progress-item {
-	background-color: #3DDC84;
+	background-color: #3ddc84;
 	width: 20%;
 	color: #000;
 	text-align: center;
@@ -71,7 +71,7 @@
 
 .about__label {
 	font-size: 14px;
-	color: #8B8B8B;
+	color: #8b8b8b;
 	line-height: 17px;
 	font-weight: 500;
 	text-align: center;

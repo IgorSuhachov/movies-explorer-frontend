@@ -19,7 +19,7 @@
 .register__label {
 	font-size: 10px;
 	font-weight: 400;
-	color: #8B8B8B;
+	color: #8b8b8b;
 	padding-bottom: 5px;
 }
 
@@ -43,11 +43,11 @@
 
 .register__input:focus {
 	outline: none;
-	border-bottom: 1px solid #4285F4;
+	border-bottom: 1px solid #4285f4;
 }
 
 .register__input-error {
-	color: #EE3465;
+	color: #ee3465;
 	font-size: 10px;
 	margin-bottom: 24px;
 }
@@ -90,14 +90,14 @@
 }
 
 .register__text {
-	color: #8B8B8B;
+	color: #8b8b8b;
 	font-size: 14px;
 	font-weight: 400;
 	margin-right: 6px;
 }
 
 .register__link {
-	color: #4285F4;
+	color: #4285f4;
 	text-decoration: none;
 	font-size: 14px;
 	font-weight: 400;

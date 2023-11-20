@@ -6,7 +6,7 @@
 .techs__header {
 	padding-bottom: 23px;
 	width: 100%;
-	border-bottom: 1px solid #DADADA;
+	border-bottom: 1px solid #dadada;
 	max-width: 1140px;
 	margin: 0 auto;
 }
@@ -58,7 +58,6 @@
 	background-color: #303030;
 	border-radius: 10px;
 }
-
 
 @media screen and (max-width: 910px) {
 	.techs {

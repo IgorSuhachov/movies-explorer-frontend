@@ -35,7 +35,7 @@
 }
 
 .switch-label:after {
-	content: "";
+	content: '';
 	position: absolute;
 	top: 5px;
 	left: 5px;
@@ -46,11 +46,11 @@
 	transition: 0.3s;
 }
 
-.switch-input:checked+.switch-label {
-	background: #2BE080;
+.switch-input:checked + .switch-label {
+	background: #2be080;
 }
 
-.switch-input:checked+.switch-label:after {
+.switch-input:checked + .switch-label:after {
 	left: calc(100% - 5px);
 	transform: translateX(-100%);
 }

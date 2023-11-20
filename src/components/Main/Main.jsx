@@ -8,17 +8,17 @@ import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 
 export default function Main({ loggedIn }) {
-  return (
-    <>
-      <Header loggedIn={loggedIn} />
-      <main className="main">
-        <Promo />
-        <AboutProject />
-        <Techs />
-        <AboutMe />
-        <Portfolio />
-      </main>
-      <Footer />
-    </>
-  );
+	return (
+		<>
+			<Header loggedIn={loggedIn} />
+			<main className='main'>
+				<Promo />
+				<AboutProject />
+				<Techs />
+				<AboutMe />
+				<Portfolio />
+			</main>
+			<Footer />
+		</>
+	);
 }
